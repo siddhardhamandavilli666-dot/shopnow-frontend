@@ -1,8 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-
 import Navbar from "./components/Navbar";
-
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -15,7 +13,7 @@ import ProductPage from "./pages/Product";
 import ForgotPassword from "./pages/ForgotPassword";
 import Orders from "./pages/Orders";
 
-// 🟢 CORRECT IMPORT
+
 import OrderDetails from "./pages/OrderDetails";
 
 const App = () => {
@@ -37,7 +35,7 @@ const App = () => {
 
         <Route path="/placeorder" element={<PlaceOrder />} />
 
-        {/* 🟢 Order details works now */}
+        {}
         <Route path="/order/:id" element={<OrderDetails />} />
 
         <Route path="/forgot-password" element={<ForgotPassword />} />
