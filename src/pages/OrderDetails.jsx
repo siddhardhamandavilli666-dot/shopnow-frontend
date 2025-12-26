@@ -1,4 +1,4 @@
-// src/pages/OrderDetails.jsx
+
 import React, { useContext, useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
@@ -15,21 +15,21 @@ const formatDate = (ts) => {
 };
 
 const OrderDetails = () => {
-  const { id } = useParams(); // /order/:id
+  const { id } = useParams(); 
   const { orders = [], products = [] } = useContext(ShopContext) || {};
 
-  // find order by id
+  
   const order = orders.find((o) => o.id === id);
 
-  // item → product info (prefer snapshot, else global products)
+  
   const enrichItems = useMemo(() => {
     if (!order || !order.items) return [];
 
     return order.items.map((item) => {
-      // 1) snapshot inside order
+    
       const snap = item.product || null;
 
-      // 2) otherwise from products list
+      
       const prodFromList =
         products.find(
           (p) =>
@@ -48,7 +48,7 @@ const OrderDetails = () => {
   }, [order, products]);
 
   if (!order) {
-    // wrong id or no orders
+    
     return (
       <>
         <div className="py-12 min-h-[60vh] text-center space-y-4">
@@ -117,7 +117,7 @@ const OrderDetails = () => {
           </div>
         </div>
 
-        {/* ITEMS LIST – Flipkart / Amazon style */}
+        {/* ITEMS LIST */}
         <div className="border border-gray-200 rounded-3xl p-6 bg-white space-y-4">
           {enrichItems.map((item, idx) => {
             const p = item.product || {};

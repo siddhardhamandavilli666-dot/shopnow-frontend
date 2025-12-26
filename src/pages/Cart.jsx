@@ -1,10 +1,10 @@
 import React, { useContext, useMemo } from "react";
-import { Link, useNavigate } from "react-router-dom";   // ⭐ useNavigate ADD
+import { Link, useNavigate } from "react-router-dom";  
 import { ShopContext } from "../context/ShopContext";
 import { products, assets } from "../assets/assets";
-import Footer from "../components/Footer";   // ⭐ Footer import
+import Footer from "../components/Footer";   
 
-const SHIPPING_FEE = 30; // ⭐ SHIPPING 30 RUPEES
+const SHIPPING_FEE = 30; 
 
 const Cart = () => {
   const {
@@ -15,7 +15,7 @@ const Cart = () => {
     getCartTotal,
   } = useContext(ShopContext);
 
-  const navigate = useNavigate();            // ⭐ navigator
+  const navigate = useNavigate();          
 
   const itemsInCart = useMemo(
     () => products.filter((p) => cartItems[p._id] > 0),
@@ -24,7 +24,7 @@ const Cart = () => {
 
   const subtotal = getCartTotal();
 
-  // ⭐ ALWAYS 30 IF CART HAS ITEMS, ELSE 0
+  
   const shippingFee = subtotal > 0 ? SHIPPING_FEE : 0;
 
   const total = subtotal + shippingFee;
@@ -153,7 +153,7 @@ const Cart = () => {
         )}
       </div>
 
-      {/* ⭐ FOOTER ONLY (no subscription) */}
+      {/* ⭐ FOOTER  */}
       <Footer />
     </>
   );

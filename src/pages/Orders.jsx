@@ -1,10 +1,9 @@
-// src/pages/Orders.jsx
+
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import Footer from "../components/Footer";
 
-// date format helper
 const formatDate = (ts) => {
   if (!ts) return "Date not available";
   const d = new Date(ts);
@@ -16,14 +15,14 @@ const formatDate = (ts) => {
 };
 
 const Orders = () => {
-  // context nundi orders + products
+  
   const { orders = [], products = [] } = useContext(ShopContext) || {};
 
   const hasOrders = orders && orders.length > 0;
 
-  // item nundi product info (image, name) tiskodaniki
+  
   const getProductFromItem = (item) => {
-    // order lo direct product snapshot unte
+  
     if (item?.product) {
       return {
         name: item.product.name || "Order items",
@@ -31,7 +30,7 @@ const Orders = () => {
       };
     }
 
-    // lekapothe global products list lo nunchi kanukko
+    
     const p =
       products.find(
         (prod) =>
@@ -49,7 +48,7 @@ const Orders = () => {
   return (
     <>
       <div className="py-10 min-h-[60vh]">
-        {/* TITLE */}
+        {}
         <div className="mb-6">
           <p className="text-xs uppercase tracking-[0.35em] text-gray-500">
             Account
@@ -57,7 +56,7 @@ const Orders = () => {
           <h1 className="text-2xl md:text-3xl font-semibold">My Orders</h1>
         </div>
 
-        {/* NO ORDERS STATE */}
+        {}
         {!hasOrders && (
           <div className="border border-gray-200 rounded-3xl p-10 text-center max-w-xl mx-auto bg-white">
             <p className="text-sm text-gray-600 mb-3">
@@ -72,7 +71,7 @@ const Orders = () => {
           </div>
         )}
 
-        {/* ORDERS LIST (Flipkart / Amazon style) */}
+        { }
         {hasOrders && (
           <div className="space-y-4">
             {orders.map((order) => {
@@ -89,11 +88,11 @@ const Orders = () => {
               return (
                 <Link
                   key={order.id}
-                  to={`/order/${order.id}`} // Order details page
+                  to={`/order/${order.id}`} 
                   className="block border border-gray-200 rounded-3xl p-4 md:p-5 bg-white hover:shadow-sm transition"
                 >
                   <div className="flex items-center gap-4">
-                    {/* LEFT – PRODUCT IMAGE */}
+                    {}
                     <div className="w-16 h-16 rounded-2xl overflow-hidden bg-slate-100 flex-shrink-0">
                       {thumb ? (
                         <img
@@ -108,9 +107,9 @@ const Orders = () => {
                       )}
                     </div>
 
-                    {/* MIDDLE – ORDER INFO */}
+                    {}
                     <div className="flex-1 space-y-1">
-                      {/* Product name + more items */}
+                      {}
                       <p className="text-sm font-medium line-clamp-1">
                         {name}
                         {totalQty > 1 && (
@@ -122,7 +121,7 @@ const Orders = () => {
                         )}
                       </p>
 
-                      {/* Order ID */}
+                      {}
                       <p className="text-xs text-gray-500">
                         Order ID:{" "}
                         <span className="font-mono text-[11px]">
@@ -130,13 +129,13 @@ const Orders = () => {
                         </span>
                       </p>
 
-                      {/* Date */}
+                      {}
                       <p className="text-xs text-gray-500">
                         Placed on: {formatDate(order.date)}
                       </p>
                     </div>
 
-                    {/* RIGHT – STATUS & TOTAL */}
+                    {}
                     <div className="text-right space-y-1">
                       <p
                         className={`text-xs font-semibold ${

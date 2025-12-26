@@ -1,4 +1,3 @@
-// src/pages/Collection.jsx
 import React, { useState, useMemo, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { products } from "../assets/assets";
@@ -10,11 +9,11 @@ const typeOptions = ["Topwear", "Bottomwear", "Winterwear"];
 const Collection = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedTypes, setSelectedTypes] = useState([]);
-  const [sort, setSort] = useState("relevant"); // relevant | low | high
+  const [sort, setSort] = useState("relevant"); 
   const [search, setSearch] = useState("");
 
   const searchInputRef = useRef(null);
-  const location = useLocation(); // 🔹 navbar nundi vachina state kosam
+  const location = useLocation(); 
 
   const toggleCategory = (cat) => {
     setSelectedCategories((prev) =>
@@ -32,12 +31,11 @@ const Collection = () => {
     if (searchInputRef.current) searchInputRef.current.focus();
   };
 
-  // 🔹 Navbar search icon click → /collection → ikkada search box lo focus
+
   useEffect(() => {
     if (location.state?.focusSearch && searchInputRef.current) {
       searchInputRef.current.focus();
-      // optional: state clear ayipotundi next navigation lo
-      // (browser automatically replace chestundi akka)
+      
     }
   }, [location]);
 
@@ -68,7 +66,7 @@ const Collection = () => {
     } else if (sort === "high") {
       data.sort((a, b) => b.price - a.price);
     }
-    // relevant → no change
+    
 
     return data;
   }, [selectedCategories, selectedTypes, sort, search]);
@@ -164,7 +162,7 @@ const Collection = () => {
                 </button>
               </div>
 
-              {/* Sort dropdown – no 'Newest' */}
+              {/* Sort dropdown  */}
               <select
                 value={sort}
                 onChange={(e) => setSort(e.target.value)}
@@ -216,4 +214,4 @@ const Collection = () => {
   );
 };
 
-export default Collection;
+export default Collection; 

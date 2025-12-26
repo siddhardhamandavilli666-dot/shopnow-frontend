@@ -1,20 +1,20 @@
-// src/context/ShopContext.jsx
+
 import React, { createContext, useState } from "react";
 import { products } from "../assets/assets";
 
 export const ShopContext = createContext();
 
 const ShopContextProvider = ({ children }) => {
-  // cartItems = { p1: 2, p5: 1, ... }
+  
   const [cartItems, setCartItems] = useState({});
 
-  // ⭐ NEW: Orders list
+
   const [orders, setOrders] = useState([]);
 
-  // ⭐ NEW: simple auth state (demo only)
+  
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // ✅ addToCart(id, qty = 1)
+  
   const addToCart = (id, qty = 1) => {
     setCartItems((prev) => ({
       ...prev,
@@ -52,18 +52,17 @@ const ShopContextProvider = ({ children }) => {
     return total;
   };
 
-  // ✅ total items count (cart icon badge kosam)
+  
   const cartCount = Object.values(cartItems).reduce((s, n) => s + n, 0);
 
-  // ⭐ NEW: demo login / logout functions
+  
   const loginDemo = () => {
     setIsLoggedIn(true);
   };
 
   const logoutDemo = () => {
     setIsLoggedIn(false);
-    // optional: logout appudu cart empty cheyyali ante
-    // setCartItems({});
+    
   };
 
   return (
@@ -92,4 +91,5 @@ const ShopContextProvider = ({ children }) => {
   );
 };
 
-export default ShopContextProvider;
+export default ShopContextProvider;                                                                                                            
+                                                                                                                                 

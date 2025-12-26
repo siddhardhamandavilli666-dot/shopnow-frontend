@@ -2,18 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { assets, products } from "../assets/assets";
 import Subscription from "../components/Subscription";
-import Footer from "../components/Footer";   // ⭐ Footer import added
+import Footer from "../components/Footer";   
 
 const Home = () => {
-  // 8 New Arrivals – latest date
+  
   const newArrivals = [...products]
     .sort((a, b) => b.date - a.date)
     .slice(0, 8);
 
-  // New Arrivals lo unna IDs
+  
   const newArrivalIds = newArrivals.map((p) => p._id);
 
-  // 8 Most Loved – bestseller true, kani New Arrivals lo leni vi matrame
+  
   const mostLoved = products
     .filter((p) => p.bestseller && !newArrivalIds.includes(p._id))
     .slice(8, 16);
@@ -114,7 +114,7 @@ const Home = () => {
       {/* SUBSCRIPTION */}
       <Subscription />
 
-      {/* FOOTER - Added here */}
+      {/* FOOTER  */}
       <Footer />
     </div>
   );

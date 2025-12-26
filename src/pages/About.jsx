@@ -1,6 +1,6 @@
 import React from "react";
 import { assets } from "../assets/assets";
-import Footer from "../components/Footer";   // ⭐ Footer import add chesanu
+import Footer from "../components/Footer";   
 
 const About = () => {
   return (
@@ -44,7 +44,7 @@ const About = () => {
 
       </section>
 
-      {/* WHY CHOOSE US — ONLY ONCE */}
+      {/* WHY CHOOSE US */}
       <section className="space-y-8">
         <h2 className="text-2xl md:text-3xl font-semibold">WHY CHOOSE US</h2>
 
@@ -97,7 +97,7 @@ const About = () => {
         </form>
       </section>
 
-      {/* FOOTER – added here */}
+      {/* FOOTER */}
       <Footer />
     </div>
   );

@@ -1,11 +1,11 @@
-// src/pages/Placeorder.jsx
+
 import React, { useContext, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import { products, assets } from "../assets/assets";
 import Footer from "../components/Footer";
 
-const SHIPPING_FEE = 30; // same as Cart
+const SHIPPING_FEE = 30; 
 
 const Placeorder = () => {
   const {
@@ -18,7 +18,7 @@ const Placeorder = () => {
 
   const navigate = useNavigate();
 
-  // cart lo unna products
+  
   const itemsInCart = useMemo(
     () => products.filter((p) => cartItems[p._id] > 0),
     [cartItems]
@@ -28,7 +28,7 @@ const Placeorder = () => {
   const shippingFee = subtotal > 0 ? SHIPPING_FEE : 0;
   const total = subtotal + shippingFee;
 
-  // cart empty ayithe
+  
   if (itemsInCart.length === 0) {
     return (
       <>
@@ -54,9 +54,9 @@ const Placeorder = () => {
   const handlePlaceOrder = (e) => {
     e.preventDefault();
 
-    // ⭐ 1) New order object (Flipkart/Amazon style)
+    
     const newOrder = {
-      id: "ORD" + Date.now(), // simple unique id
+      id: "ORD" + Date.now(), 
       date: Date.now(),
       status: "Placed",
       total: total,
@@ -66,22 +66,22 @@ const Placeorder = () => {
       })),
     };
 
-    // ⭐ 2) Save into context orders array
+    
     setOrders((prev) => [newOrder, ...(prev || [])]);
 
-    // ⭐ 3) Clear cart (anni items remove cheyyadam)
+  
     Object.keys(cartItems).forEach((id) => {
       deleteFromCart(id);
     });
 
-    // ⭐ 4) Redirect to Orders page
+  
     navigate("/orders");
   };
 
   return (
     <>
       <div className="py-10 space-y-10">
-        {/* TITLE */}
+        {}
         <h1 className="text-2xl md:text-3xl tracking-[0.35em] uppercase">
           Delivery Information
         </h1>
@@ -90,9 +90,9 @@ const Placeorder = () => {
           onSubmit={handlePlaceOrder}
           className="grid lg:grid-cols-[2fr_1fr] gap-10 items-start"
         >
-          {/* LEFT – DELIVERY FORM */}
+          {}
           <div className="space-y-6">
-            {/* Name row */}
+            {}
             <div className="grid md:grid-cols-2 gap-4">
               <div className="space-y-1">
                 <label className="text-xs uppercase tracking-[0.2em] text-gray-600">
@@ -116,7 +116,7 @@ const Placeorder = () => {
               </div>
             </div>
 
-            {/* Email + Phone */}
+            {}
             <div className="grid md:grid-cols-2 gap-4">
               <div className="space-y-1">
                 <label className="text-xs uppercase tracking-[0.2em] text-gray-600">
@@ -140,7 +140,7 @@ const Placeorder = () => {
               </div>
             </div>
 
-            {/* Street */}
+            {}
             <div className="space-y-1">
               <label className="text-xs uppercase tracking-[0.2em] text-gray-600">
                 Street
@@ -152,7 +152,7 @@ const Placeorder = () => {
               />
             </div>
 
-            {/* City / State */}
+            {}
             <div className="grid md:grid-cols-2 gap-4">
               <div className="space-y-1">
                 <label className="text-xs uppercase tracking-[0.2em] text-gray-600">
@@ -176,7 +176,7 @@ const Placeorder = () => {
               </div>
             </div>
 
-            {/* Zip / Country */}
+            {}
             <div className="grid md:grid-cols-2 gap-4">
               <div className="space-y-1">
                 <label className="text-xs uppercase tracking-[0.2em] text-gray-600">
@@ -201,9 +201,9 @@ const Placeorder = () => {
             </div>
           </div>
 
-          {/* RIGHT – CART TOTALS + PAYMENT */}
+          {}
           <div className="space-y-8">
-            {/* CART TOTALS BOX */}
+            {}
             <div className="border border-gray-200 rounded-3xl p-6 space-y-4 bg-white">
               <h2 className="text-lg tracking-[0.25em] uppercase">
                 Cart Totals
@@ -225,14 +225,14 @@ const Placeorder = () => {
               </div>
             </div>
 
-            {/* PAYMENT METHODS */}
+            {}
             <div className="border border-gray-200 rounded-3xl p-6 space-y-4 bg-white">
               <h2 className="text-lg tracking-[0.25em] uppercase">
                 Payment Method
               </h2>
 
               <div className="space-y-3 text-sm">
-                {/* Stripe */}
+                {}
                 <label className="flex items-center gap-3 cursor-pointer">
                   <input
                     type="radio"
@@ -248,7 +248,7 @@ const Placeorder = () => {
                   />
                 </label>
 
-                {/* Razorpay */}
+                {}
                 <label className="flex items-center gap-3 cursor-pointer">
                   <input
                     type="radio"
@@ -264,7 +264,7 @@ const Placeorder = () => {
                   />
                 </label>
 
-                {/* Cash on Delivery (default) */}
+                {}
                 <label className="flex items-center gap-3 cursor-pointer">
                   <input
                     type="radio"
@@ -277,7 +277,7 @@ const Placeorder = () => {
                 </label>
               </div>
 
-              {/* PLACE ORDER BUTTON */}
+              {}
               <button
                 type="submit"
                 className="w-full mt-4 py-3 bg-black text-white text-xs tracking-[0.25em] uppercase rounded-full"

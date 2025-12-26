@@ -1,4 +1,4 @@
-// src/pages/ForgotPassword.jsx
+
 import React, { useState } from "react";
 import Footer from "../components/Footer";
 
@@ -14,7 +14,7 @@ const ForgotPassword = () => {
       return;
     }
 
-    // Real project lo ikkada API call vuntundi
+    
     setMessage(
       "If an account exists with this email, a password reset link will be sent."
     );

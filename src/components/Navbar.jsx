@@ -152,7 +152,7 @@ const Navbar = () => {
               onClick={() => {
                 setActiveDrop("orders");
                 setVisible(false);
-                navigate("/orders");   // ⭐ ippudu Orders page ki velluthundi
+                navigate("/orders");   
               }}
               className={`px-4 py-2 cursor-pointer rounded ${
                 activeDrop === "orders"

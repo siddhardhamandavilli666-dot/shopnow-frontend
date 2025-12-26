@@ -1,4 +1,4 @@
-// src/pages/Signup.jsx
+
 import React, { useState } from "react";
 import Footer from "../components/Footer";
 
@@ -27,7 +27,7 @@ const Signup = () => {
     <>
       {/* MAIN SIGNUP SECTION */}
       <div className="py-10 min-h-[70vh] flex items-center justify-center">
-        {/* max width ekkuva -> box pedda, center lo */}
+        {/* max width */}
         <div className="w-full max-w-4xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           {/* LEFT: BRAND TEXT */}
           <div className="text-left">
@@ -40,7 +40,7 @@ const Signup = () => {
             </p>
           </div>
 
-          {/* RIGHT: BIGGER SIGNUP CARD */}
+          {/* RIGHT*/}
           <div className="border border-gray-200 rounded-3xl p-10 bg-white shadow-sm w-full">
             <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-1">
               Account
@@ -93,7 +93,7 @@ const Signup = () => {
       onChange={handleChange}
       placeholder="Enter password"
       className="w-full border border-gray-300 rounded-full px-4 py-2 text-sm outline-none pr-16"
-      style={{ fontFamily: "sans-serif" }} // prevents wrong font showing characters
+      style={{ fontFamily: "sans-serif" }} 
       required
     />
     <button

@@ -1,7 +1,7 @@
 // src/pages/Contact.jsx
 import React from "react";
 import { assets } from "../assets/assets";
-import Footer from "../components/Footer";   // ⭐ Footer import add chesanu
+import Footer from "../components/Footer";   
 
 const Contact = () => {
   return (
@@ -21,7 +21,7 @@ const Contact = () => {
         {/* Left – Image */}
         <div className="w-full">
           <img
-            src={assets.cont}   // nee contact image
+            src={assets.cont}   
             alt="Our Store"
             className="w-full max-w-md h-80 mx-auto rounded-2xl object-cover shadow-sm"
           />
@@ -57,7 +57,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* SUBSCRIBE SECTION (BOTTOM) */}
+      {/* SUBSCRIBE SECTION  */}
       <section className="border-y border-gray-200 py-10 text-center space-y-4">
         <h2 className="text-xl md:text-2xl font-semibold">
           Subscribe now &amp; get 20% off
@@ -83,7 +83,7 @@ const Contact = () => {
         </form>
       </section>
 
-      {/* FOOTER – Added here */}
+      {/* FOOTER */}
       <Footer />
     </div>
   );

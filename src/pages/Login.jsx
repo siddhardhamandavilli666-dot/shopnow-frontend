@@ -1,6 +1,6 @@
-// src/pages/Login.jsx
+
 import React, { useState } from "react";
-import { Link } from "react-router-dom";   // ⭐ Added
+import { Link } from "react-router-dom";   
 import Footer from "../components/Footer";
 
 const Login = () => {
@@ -64,7 +64,7 @@ const Login = () => {
                 </span>
               </div>
 
-              {/* ⭐ FORGOT PASSWORD — now navigates to the correct page */}
+              {/* ⭐ FORGOT PASSWORD */}
               <Link
                 to="/forgot-password"
                 className="text-[11px] text-gray-500 hover:text-black underline-offset-2 hover:underline mt-1 inline-block"
